@@ -1,14 +1,12 @@
-import React from "react";
+import React from 'react'
 import Image from "next/image";
 import MainLogo from "../public/logo_firstpackers&movers.png";
 import Link from "next/link";
 
-const SignInForm = () => {
+const SignUpForm = () => {
   return (
     <div>
-      {/* <!-- ====== Forms Section Start --> */}
-
-      <section className="bg-[#F4F7FF] py-10 lg:py-[120px]">
+         <section className="bg-[#F4F7FF] py-20 lg:py-[120px]">
         <div className="container mx-auto">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
@@ -25,6 +23,13 @@ const SignInForm = () => {
                   </a>
                 </div>
                 <form action="#" method="POST">
+                <div className="mb-6">
+                    <input
+                      type="text"
+                      placeholder="Name"
+                      className="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
+                    />
+                  </div>
                   <div className="mb-6">
                     <input
                       type="text"
@@ -42,7 +47,7 @@ const SignInForm = () => {
                   <div className="mb-10">
                     <input
                       type="submit"
-                      value="Sign In"
+                      value="Sign Up"
                       className="bordder-primary w-full cursor-pointer bg-blue-700 rounded-md border bg-primary py-3 px-5 text-base text-white transition hover:bg-opacity-90"
                     />
                   </div>
@@ -107,21 +112,17 @@ const SignInForm = () => {
                     </a>
                   </li>
                 </ul>
-                <Link
-                  href="/ForgotPassword"
-                  className="mb-2 inline-block text-base text-gray-900 hover:text-primary hover:underline"
-                >
-                  Forgot Password?
-                </Link>
+
                 <p className="text-base text-gray-900">
-                  Not a member yet?  
+                  Or <br />
                   <Link
-                    href="/SignUp"
+                    href="/SignIn"
                     className="text-primary hover:underline"
                   >
-                     Sign Up
+                     Sign In
                   </Link>
                 </p>
+             
                 <div>
                   <span className="absolute top-1 right-1">
                     <svg
@@ -345,10 +346,8 @@ const SignInForm = () => {
           </div>
         </div>
       </section>
-
-      {/* <!-- ====== Forms Section End --> */}
     </div>
-  );
-};
+  )
+}
 
-export default SignInForm;
+export default SignUpForm

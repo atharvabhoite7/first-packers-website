@@ -15,7 +15,7 @@ function Header() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <nav className="w-full bg-orange-200 shadow">
+      <nav className="w-full bg-blue-200 shadow">
         <div className=" justify-between px-4 lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -96,8 +96,8 @@ function Header() {
                   </Link>
                 </li>
                 <li className="text-black ">
-                  <Link href="/contact">
-                    Contact
+                  <Link href="/enquiry">
+                    Enquiry
                   </Link>
                 </li>
               </ul>

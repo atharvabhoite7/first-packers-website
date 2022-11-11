@@ -30,21 +30,21 @@ const SignInForm = () => {
                     <input
                       type="text"
                       placeholder="Email"
-                      class="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
+                      class="bordder-[#1e3a8a] border-4 w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
                     />
                   </div>
                   <div class="mb-6">
                     <input
                       type="password"
                       placeholder="Password"
-                      class="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
+                      class="bordder-[#1e3a8a] border-4 w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
                     />
                   </div>
                   <div class="mb-10">
                     <input
                       type="submit"
                       value="Sign In"
-                      class="bordder-primary w-full cursor-pointer rounded-md border bg-primary py-3 px-5 text-base text-white transition hover:bg-opacity-90"
+                      class="bordder-primary bg-blue-900 w-full cursor-pointer rounded-md border bg-primary py-3 px-5 text-base text-white transition hover:bg-opacity-90"
                     />
                   </div>
                 </form>

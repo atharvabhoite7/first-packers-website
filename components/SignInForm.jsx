@@ -18,10 +18,7 @@ const SignInForm = () => {
                     href="javascript:void(0)"
                     className="mx-auto inline-block max-w-[160px]"
                   >
-                    <Image
-                      src={MainLogo}
-                      alt="logo"
-                    />
+                    <Image src={MainLogo} alt="logo" />
                   </a>
                 </div>
                 <form action="#" method="POST">
@@ -29,21 +26,21 @@ const SignInForm = () => {
                     <input
                       type="text"
                       placeholder="Email"
-                      className="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
+                      class="bordder-[#1e3a8a] border-4 w-full rounded-md bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
                     />
                   </div>
                   <div className="mb-6">
                     <input
                       type="password"
                       placeholder="Password"
-                      className="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
+                      class="bordder-[#1e3a8a] border-4 w-full rounded-md bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
                     />
                   </div>
                   <div className="mb-10">
                     <input
                       type="submit"
                       value="Sign In"
-                      className="bordder-primary w-full cursor-pointer bg-blue-700 rounded-md border bg-primary py-3 px-5 text-base text-white transition hover:bg-opacity-90"
+                      class="bordder-primary bg-blue-900 w-full cursor-pointer rounded-md border bg-primary py-3 px-5 text-base text-white transition hover:bg-opacity-90"
                     />
                   </div>
                 </form>
@@ -114,12 +111,9 @@ const SignInForm = () => {
                   Forgot Password?
                 </Link>
                 <p className="text-base text-gray-900">
-                  Not a member yet?  
-                  <Link
-                    href="/SignUp"
-                    className="text-primary hover:underline"
-                  >
-                     Sign Up
+                  Not a member yet?
+                  <Link href="/SignUp" className="text-primary hover:underline">
+                    Sign Up
                   </Link>
                 </p>
                 <div>

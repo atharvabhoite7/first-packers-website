@@ -27,6 +27,17 @@ const EnquiryForm = () => {
     setShowModal(true);
   };
 
+  async function sendMail(e) {
+    e.preventDefault();
+
+    fetch("/api/mail",
+      {
+        method: "post",
+        body: JSON.stringify(formData)
+      })
+    console.log(formData);
+  }
+
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -34,6 +45,7 @@ const EnquiryForm = () => {
       <form
         onSubmit={handleSubmit}
         class="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white dark:bg-white"
+        method="post"
       >
         <h1 class="text-2xl font-bold dark:text-black">Send a message</h1>
 
@@ -101,7 +113,10 @@ const EnquiryForm = () => {
           name="budget"
           class="bg-transparent border-b py-2 pl-4 font-normal focus:outline-none focus:rounded-md focus:ring-1 ring-black-500 text-black"
         >
-          <option value="choose a valid option"> Please choose an option</option>
+          <option value="choose a valid option">
+            {" "}
+            Please choose an option
+          </option>
           <option value="less than 6000"> less than 6000</option>
           <option value="7000-10000">7000-10000</option>
           <option value="10000-15000">10000-15000</option>
@@ -190,7 +205,7 @@ const EnquiryForm = () => {
                   <button
                     className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
-                    onClick={() => setShowModal(false)}
+                    onClick={sendMail}
                   >
                     Send Enquiry
                   </button>

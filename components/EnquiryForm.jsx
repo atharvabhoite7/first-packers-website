@@ -3,6 +3,7 @@ import Image from "next/image";
 import MainLogo from "../public/logo_firstpackers&movers.png";
 import { FiSend } from "react-icons/fi";
 import { useState } from "react";
+import axios from "axios";
 
 const EnquiryForm = () => {
   const [formData, setFormData] = useState({
@@ -30,12 +31,24 @@ const EnquiryForm = () => {
   async function sendMail(e) {
     e.preventDefault();
 
-    fetch("/api/mail",
-      {
-        method: "post",
-        body: JSON.stringify(formData)
-      })
+    await fetch("/api/mail", {
+      method: "post",
+      body: JSON.stringify(formData),
+    });
     console.log(formData);
+
+    await axios
+      .post("/api/formAPI", {
+        formData: formData,
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+    setShowModal(false);
   }
 
   const [showModal, setShowModal] = useState(false);
@@ -111,7 +124,7 @@ const EnquiryForm = () => {
           value={formData.budget}
           onChange={handleChange}
           name="budget"
-          class="bg-transparent border-b py-2 pl-4 font-normal focus:outline-none focus:rounded-md focus:ring-1 ring-black-500 text-black"
+          class="bg-blue-100 border-b py-2 pl-4 font-normal focus:outline-none focus:rounded-md focus:ring-1 ring-black-500 text-black"
         >
           <option value="choose a valid option">
             {" "}
@@ -134,7 +147,7 @@ const EnquiryForm = () => {
           value={formData.items}
           onChange={handleChange}
           name="items"
-          class="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-black-500 font-normal text-black"
+          class="bg-blue-100 border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-black-500 font-normal text-black"
         ></textarea>
         <div class="flex flex-row items-center justify-start">
           <button

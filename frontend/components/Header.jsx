@@ -91,6 +91,9 @@ function Header() {
                 <li className="text-black ">
                   <Link href="/enquiry">Enquiry</Link>
                 </li>
+                <li className="text-black ">
+                  <Link href="/chat">ChatBot</Link>
+                </li>
               </ul>
             </div>
           </div>

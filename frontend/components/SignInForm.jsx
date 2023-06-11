@@ -2,8 +2,51 @@ import React from "react";
 import Image from "next/image";
 import MainLogo from "../public/logo_firstpackers&movers.png";
 import Link from "next/link";
+import { signIn } from "next-auth/react";
+import { useFormik } from "formik";
+import {login_validate} from "../lib/validate";
+import {useRouter} from "next/router";
+import { useState } from "react";
 
 const SignInForm = () => {
+  const router = useRouter();
+  const [ authenticated, setAuthenticated] = useState(true);
+
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    validate: login_validate,
+    onSubmit,
+  });
+
+  // console.log(formik.errors);
+
+  async function onSubmit(values) {
+   const status = await signIn('credentials', {
+      redirect: false,
+      email : values.email,
+      password: values.password,
+      callbackUrl: "/"
+    })
+    .then(({ ok, error }) => {
+      if (ok) {
+          router.push("/");
+      } else {
+          console.log(error)
+          setAuthenticated(false);
+          // toast("Credentials do not match!", { type: "error" });
+      }
+  })
+
+    // if(status.ok) router.push(status.url) 
+   
+  }
+  // google handler function
+  async function handleGoogleSignIn() {
+    signIn("google", { callbackUrl: "http://localhost:3000" });
+  }
   return (
     <div>
       {/* <!-- ====== Forms Section Start --> */}
@@ -21,32 +64,68 @@ const SignInForm = () => {
                     <Image src={MainLogo} alt="logo" />
                   </a>
                 </div>
-                <form action="#" method="POST">
+                <form onSubmit={formik.handleSubmit}>
                   <div className="mb-6">
                     <input
-                      type="text"
+                      required
+                      type="email"
+                      name="email"
                       placeholder="Email"
+                      {...formik.getFieldProps("email")}
                       class="bordder-[#1e3a8a] border-4 w-full rounded-md bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
                     />
                   </div>
+                  {formik.errors.email && formik.touched.email ? (
+                    <span className="text-rose-500">{formik.errors.email}</span>
+                  ) : (
+                    <></>
+                  )}
                   <div className="mb-6">
                     <input
+                      required
                       type="password"
+                      name="password"
                       placeholder="Password"
+                      {...formik.getFieldProps("password")}
                       class="bordder-[#1e3a8a] border-4 w-full rounded-md bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
                     />
                   </div>
+                  {formik.errors.password && formik.touched.password ? (
+                    <span className="text-rose-500">
+                      {formik.errors.password}
+                    </span>
+                  ) : (
+                    <></>
+                  )}
+
+{!authenticated  && 
+                    <span className="text-rose-500">
+                      "Credentials do not match. Try again"
+                    </span> 
+                  }
+
                   <div className="mb-10">
-                    <input
+                    <button
                       type="submit"
-                      value="Sign In"
                       class="bordder-primary bg-blue-900 w-full cursor-pointer rounded-md border bg-primary py-3 px-5 text-base text-white transition hover:bg-opacity-90"
-                    />
+                    >
+                      Sign In
+                    </button>
+                  </div>
+
+                  <div className="mb-10">
+                    <button
+                      type="submit"
+                      onClick={handleGoogleSignIn}
+                      class="bordder-primary bg-green-600 w-full cursor-pointer rounded-md border bg-primary py-3 px-5 text-base text-white transition hover:bg-opacity-90"
+                    >
+                      Sign In with Google
+                    </button>
                   </div>
                 </form>
-                <p className="mb-6 text-base text-gray-900">Connect With</p>
-                <ul className="-mx-2 mb-12 flex justify-between">
-                  <li className="w-full px-2">
+                {/* <p className="mb-6 text-base text-gray-900">Connect With</p> */}
+                {/* <ul className="-mx-2 mb-12 flex justify-between"> */}
+                {/* <li className="w-full px-2">
                     <a
                       href="javascript:void(0)"
                       className="flex h-11 items-center justify-center rounded-md bg-[#4064AC] hover:bg-opacity-90"
@@ -64,8 +143,8 @@ const SignInForm = () => {
                         />
                       </svg>
                     </a>
-                  </li>
-                  <li className="w-full px-2">
+                  </li> */}
+                {/* <li className="w-full px-2">
                     <a
                       href="javascript:void(0)"
                       className="flex h-11 items-center justify-center rounded-md bg-[#1C9CEA] hover:bg-opacity-90"
@@ -83,11 +162,12 @@ const SignInForm = () => {
                         />
                       </svg>
                     </a>
-                  </li>
-                  <li className="w-full px-2">
-                    <a
-                      href="javascript:void(0)"
-                      className="flex h-11 items-center justify-center rounded-md bg-[#D64937] hover:bg-opacity-90"
+                  </li> */}
+                {/* <li className="w-full px-2">
+                    <button
+                      // href="javascript:void(0)"
+                      type="submit"
+                      className="flex h-11 w-auto items-center justify-center rounded-md bg-[#378cd6] hover:bg-opacity-90"
                     >
                       <svg
                         width="18"
@@ -101,9 +181,9 @@ const SignInForm = () => {
                           fill="white"
                         />
                       </svg>
-                    </a>
+                    </button>
                   </li>
-                </ul>
+                </ul> */}
                 <Link
                   href="/ForgotPassword"
                   className="mb-2 inline-block text-base text-gray-900 hover:text-primary hover:underline"
@@ -111,8 +191,11 @@ const SignInForm = () => {
                   Forgot Password?
                 </Link>
                 <p className="text-base text-gray-900">
-                  Not a member yet?
-                  <Link href="/SignUp" className="text-primary hover:underline">
+                  Don't have an account yet?
+                  <Link
+                    href="/register"
+                    className="text-primary hover:underline"
+                  >
                     Sign Up
                   </Link>
                 </p>

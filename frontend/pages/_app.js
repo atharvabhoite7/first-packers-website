@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import "../styles/globals.css";
 import Footer from "../components/Footer";
 import Script from "next/script";
+import { SessionProvider } from "next-auth/react";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -25,9 +26,11 @@ function MyApp({ Component, pageProps }) {
         `,
         }}
       />
-      <Header />
-      <Component {...pageProps} />
-      <Footer />
+      <SessionProvider session={pageProps.session}>
+        <Header />
+        <Component {...pageProps} />
+        <Footer />
+      </SessionProvider>
     </>
   );
 }

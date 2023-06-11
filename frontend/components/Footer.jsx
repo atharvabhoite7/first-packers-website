@@ -86,6 +86,7 @@ function Footer() {
           </ul>
         </div>
       </div>
+      
       <div className="flex flex-col justify-center items-center text-center bg-black">
         <h1 className=" text-stone-300 font-semibold">
           © 2022 First Packers & Movers | All Rights Reserved

@@ -86,7 +86,7 @@ function Header() {
                   <Link href="/services">Services</Link>
                 </li>
                 <li className="text-black">
-                  <Link href="/about">About Us</Link>
+                  <Link href="/testimonials">Testimonials</Link>
                 </li>
                 <li className="text-black ">
                   <Link href="/enquiry">Enquiry</Link>

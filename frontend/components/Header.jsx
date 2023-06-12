@@ -11,7 +11,6 @@ function Header() {
         <title>First Packers & Movers</title>
         <meta
           name="First Packers & Movers"
-          content="Create Next JS Responsive Menu with Tailwind CSS"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

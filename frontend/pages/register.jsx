@@ -1,7 +1,7 @@
 import React from 'react'
 import SignUpForm from '../components/SignUpForm'
 
-const SignUp = () => {
+const register = () => {
   return (
     <div>
        <SignUpForm/> 
@@ -9,4 +9,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default register

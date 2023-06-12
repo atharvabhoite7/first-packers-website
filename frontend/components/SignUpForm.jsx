@@ -1,12 +1,45 @@
-import React from 'react'
+import React from "react";
 import Image from "next/image";
 import MainLogo from "../public/logo_firstpackers&movers.png";
 import Link from "next/link";
-
+import { useFormik } from "formik";
+import {registerValidate} from "../lib/validate";
+import {useRouter} from "next/router";
+ 
 const SignUpForm = () => {
+  const router = useRouter();
+  const formik = useFormik({
+    initialValues: {
+      username: "",
+      email: "",
+      password: "",
+      cpassword: "",
+    },
+    onSubmit,
+    validate: registerValidate,
+  });
+
+  // console.log(formik.errors);
+
+  async function onSubmit(values) {
+    const options = {
+      method: "POST",
+      headers: {'Content-Type': "application/json"},
+      body: JSON.stringify(values)
+    }
+
+    await fetch ('http://localhost:3000/api/auth/signup', options)
+    .then(res => res.json())
+    .then((data) => {
+      if(data) router.push('http://localhost:3000')
+      
+    })
+  }
   return (
     <div>
-         <section className="bg-[#F4F7FF] py-20 lg:py-[120px]">
+      {/* <!-- ====== Forms Section Start --> */}
+
+      <section className="bg-[#F4F7FF] py-10 lg:py-[120px]">
         <div className="container mx-auto">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
@@ -16,45 +49,94 @@ const SignUpForm = () => {
                     href="javascript:void(0)"
                     className="mx-auto inline-block max-w-[160px]"
                   >
-                    <Image
-                      src={MainLogo}
-                      alt="logo"
-                    />
+                    <Image src={MainLogo} alt="logo" />
                   </a>
                 </div>
-                <form action="#" method="POST">
-                <div className="mb-6">
-                    <input
-                      type="text"
-                      placeholder="Name"
-                      className="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
-                    />
-                  </div>
+                <form onSubmit={formik.handleSubmit}>
                   <div className="mb-6">
                     <input
+                      required
                       type="text"
+                      name="Username"
+                      placeholder="Username"
+                      {...formik.getFieldProps("username")}
+                      class="bordder-[#1e3a8a] border-4 w-full rounded-md bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
+                    />
+                  </div>
+
+                  {formik.errors.username && formik.touched.username ? (
+                    <span className="text-rose-500">
+                      {formik.errors.username}
+                    </span>
+                  ) : (
+                    <></>
+                  )}
+
+                  <div className="mb-6">
+                    <input
+                      required
+                      type="email"
+                      name="email"
                       placeholder="Email"
-                      className="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
+                      {...formik.getFieldProps("email")}
+                      class="bordder-[#1e3a8a] border-4 w-full rounded-md bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
                     />
                   </div>
+
+                  {formik.errors.email && formik.touched.email ? (
+                    <span className="text-rose-500">{formik.errors.email}</span>
+                  ) : (
+                    <></>
+                  )}
+
                   <div className="mb-6">
                     <input
+                      required
                       type="password"
+                      name="password"
                       placeholder="Password"
-                      className="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
+                      {...formik.getFieldProps("password")}
+                      class="bordder-[#1e3a8a] border-4 w-full rounded-md bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
                     />
                   </div>
-                  <div className="mb-10">
+                  {formik.errors.password && formik.touched.password ? (
+                    <span className="text-rose-500">
+                      {formik.errors.password}
+                    </span>
+                  ) : (
+                    <></>
+                  )}
+
+                  <div className="mb-6">
                     <input
-                      type="submit"
-                      value="Sign Up"
-                      className="bordder-primary w-full cursor-pointer bg-blue-700 rounded-md border bg-primary py-3 px-5 text-base text-white transition hover:bg-opacity-90"
+                      required
+                      type="password"
+                      name="cpassword"
+                      placeholder="Confirm Password"
+                      {...formik.getFieldProps("cpassword")}
+                      class="bordder-[#1e3a8a] border-4 w-full rounded-md bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
                     />
+                  </div>
+                  {formik.errors.cpassword && formik.touched.cpassword ? (
+                    <span className="text-rose-500">
+                      {formik.errors.cpassword}
+                    </span>
+                  ) : (
+                    <></>
+                  )}
+
+                  <div className="mb-10">
+                    <button
+                      type="submit"
+                      class="bordder-primary bg-blue-900 w-full cursor-pointer rounded-md border bg-primary py-3 px-5 text-base text-white transition hover:bg-opacity-90"
+                    >
+                      Sign Up
+                    </button>
                   </div>
                 </form>
-                <p className="mb-6 text-base text-gray-900">Connect With</p>
-                <ul className="-mx-2 mb-12 flex justify-between">
-                  <li className="w-full px-2">
+                {/* <p className="mb-6 text-base text-gray-900">Connect With</p> */}
+                {/* <ul className="-mx-2 mb-12 flex justify-between"> */}
+                {/* <li className="w-full px-2">
                     <a
                       href="javascript:void(0)"
                       className="flex h-11 items-center justify-center rounded-md bg-[#4064AC] hover:bg-opacity-90"
@@ -72,8 +154,8 @@ const SignUpForm = () => {
                         />
                       </svg>
                     </a>
-                  </li>
-                  <li className="w-full px-2">
+                  </li> */}
+                {/* <li className="w-full px-2">
                     <a
                       href="javascript:void(0)"
                       className="flex h-11 items-center justify-center rounded-md bg-[#1C9CEA] hover:bg-opacity-90"
@@ -91,11 +173,12 @@ const SignUpForm = () => {
                         />
                       </svg>
                     </a>
-                  </li>
-                  <li className="w-full px-2">
-                    <a
-                      href="javascript:void(0)"
-                      className="flex h-11 items-center justify-center rounded-md bg-[#D64937] hover:bg-opacity-90"
+                  </li> */}
+                {/* <li className="w-full px-2">
+                    <button
+                      // href="javascript:void(0)"
+                      type="submit"
+                      className="flex h-11 w-auto items-center justify-center rounded-md bg-[#378cd6] hover:bg-opacity-90"
                     >
                       <svg
                         width="18"
@@ -109,20 +192,16 @@ const SignUpForm = () => {
                           fill="white"
                         />
                       </svg>
-                    </a>
+                    </button>
                   </li>
-                </ul>
+                </ul> */}
 
                 <p className="text-base text-gray-900">
-                  Or <br />
-                  <Link
-                    href="/SignIn"
-                    className="text-primary hover:underline"
-                  >
-                     Sign In
+                  Already have an account?
+                  <Link href="/login" className="text-primary hover:underline">
+                    Sign In
                   </Link>
                 </p>
-             
                 <div>
                   <span className="absolute top-1 right-1">
                     <svg
@@ -346,8 +425,10 @@ const SignUpForm = () => {
           </div>
         </div>
       </section>
-    </div>
-  )
-}
 
-export default SignUpForm
+      {/* <!-- ====== Forms Section End --> */}
+    </div>
+  );
+};
+
+export default SignUpForm;

@@ -4,7 +4,7 @@ import FormResponse from "../../models/formResponse";
 export default async function handler(req, res) {
   mongoose
     .connect(
-      "mongodb+srv://atharvabhoite:JhYvJpWSdPWyvcPS@cluster0.675hoz8.mongodb.net/fpm?retryWrites=true&w=majority",
+      process.env.MONGO_URL,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,

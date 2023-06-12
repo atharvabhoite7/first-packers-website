@@ -1,4 +1,3 @@
-import SignInForm from "../components/SignInForm";
 import React from "react";
 import CarouselComponent from "../components/CarouselComponent";
 
@@ -11,43 +10,10 @@ export default function Home() {
             First Packers and Movers welcomes you!
           </h1>
           <CarouselComponent />
-          {/* Add other content */}
         </div>
       </div>
 
-      {/* FOUNDER'S CORNER */}
-      {/* <div className="bg-gray-100 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              Meet the Founder
-            </h2>
-            <p className="text-lg text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-              commodo velit quis quam sagittis, eget aliquam lectus tristique.
-              Nulla efficitur nunc vitae mi lacinia posuere.
-            </p>
-          </div>
-          <div className="mt-12 flex items-center justify-center">
-            <div className="max-w-lg mx-auto">
-              <div className="rounded-full overflow-hidden">
-                <img
-                  className="w-64 h-64 object-cover"
-                  src="https://t3.ftcdn.net/jpg/03/96/78/06/360_F_396780640_mO95sH5ITG2sD3RdOd7fh3olapEkupXW.jpg"
-                  alt="Founder"
-                />
-              </div>
-              <div className="mt-4">
-                <h3 className="text-xl font-semibold text-gray-800">
-                  John Doe
-                </h3>
-                <p className="text-md text-gray-600">Founder & CEO</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
+      {/*  FOUNDER'S CORNER  */}
       <div className="bg-gray-100 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -63,10 +29,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* <p className="text-lg text-gray-600">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo velit quis quam sagittis, eget aliquam
-        lectus tristique. Nulla efficitur nunc vitae mi lacinia posuere.
-      </p> */}
           </div>
           <div className="mt-12 flex items-center justify-center">
             <div className="max-w-lg mx-auto bg-white rounded-lg shadow-lg">

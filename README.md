@@ -1,7 +1,7 @@
 # First Packers and Movers
-This repository contains a freelace Next.js project integrated with Tailwind CSS created for a business based in Mumbai, providing a solid foundation for building responsive and stylish web applications. 
+This repository contains a freelance Next.js project integrated with Tailwind CSS created for a business based in Mumbai, providing a solid foundation for building responsive and stylish web applications. 
 
-About the business- First Packers and Movers has been in successfully running for 12 years, always delivering stellar results to all clients. The venture started with the aim to satisfy cients and make the process of shifting homes and offices easier and hassle-free.
+About the business- First Packers and Movers has been successfully running for 12 years, consistently delivering stellar results to all clients. The venture started with the aim to satisfy clients and make the process of shifting homes and offices easier and hassle-free.
 
 ## Installation
 

@@ -18,7 +18,7 @@ function Header() {
         <div className=" justify-between px-4 lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
-              <a href="#">
+              <a href="/">
                 <div className="flex flex-column">
                   <img
                     src="https://res.cloudinary.com/duvkuygt2/image/upload/v1666540735/logo_firstpackers_movers_xn66rj.png"
@@ -79,7 +79,7 @@ function Header() {
             >
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 font-semibold">
                 <li className="text-black ">
-                  <Link href="/">Home</Link>
+                  <Link href="/home">Home</Link>
                 </li>
                 <li className="text-black">
                   <Link href="/services">Services</Link>

@@ -100,7 +100,7 @@ const SignInForm = () => {
 
 {!authenticated  && 
                     <span className="text-rose-500">
-                      "Credentials do not match. Try again"
+                      Credentials do not match. Try again
                     </span> 
                   }
 
@@ -191,7 +191,7 @@ const SignInForm = () => {
                   Forgot Password?
                 </Link>
                 <p className="text-base text-gray-900">
-                  Don't have an account yet?
+                  Don&apos;t have an account yet?
                   <Link
                     href="/register"
                     className="text-primary hover:underline"

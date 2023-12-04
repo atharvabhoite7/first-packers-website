@@ -3,26 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import axios from "axios";
 
-export async function getStaticProps() {
-  const mongoose = require("mongoose");
-  const Testimonial = require("../models/testimonialSchema");
-
-  await mongoose
-    .connect(process.env.MONGO_URL, {
-      useNewUrlParser: true,
-    })
-    .then(() => console.log("DB connected"));
-
-  const testimonials = await Testimonial.find().sort({ createdAt: "desc" });
-  console.log(testimonials);
-  return {
-    props: {
-      testimonials: JSON.parse(JSON.stringify(testimonials)),
-    },
-  };
-}
-
-const testimonials = ({ testimonials }) => {
+export default function Testimonials ({ testimonials }) {
   return (
     <div>
       <section class="text-gray-600 body-font">
@@ -47,14 +28,7 @@ const testimonials = ({ testimonials }) => {
         </div>
         <div className="flex flex-row justify-center pt-2 pb-10 px-6 ">
           <div class="text-white text-center w-36 bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-
-          
-          <Link
-            href="/testimonialform"
-            
-          >
-            ADD
-          </Link>
+            <Link href="/testimonialform">ADD</Link>
           </div>
         </div>
       </section>
@@ -62,4 +36,22 @@ const testimonials = ({ testimonials }) => {
   );
 };
 
-export default testimonials;
+
+export async function getStaticProps() {
+  const mongoose = require("mongoose");
+  const Testimonial = require("../models/testimonialSchema");
+
+  await mongoose
+    .connect(process.env.MONGO_URL, {
+      useNewUrlParser: true,
+    })
+    .then(() => console.log("DB connected"));
+
+  const testimonials = await Testimonial.find().sort({ createdAt: "desc" });
+  console.log(testimonials);
+  return {
+    props: {
+      testimonials: JSON.parse(JSON.stringify(testimonials)),
+    },
+  };
+}

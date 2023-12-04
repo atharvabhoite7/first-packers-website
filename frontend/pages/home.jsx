@@ -39,11 +39,11 @@ export default function Home() {
               />
               <div className="p-6">
                 <h3 className="text-2xl font-semibold text-gray-800 mb-2">
-                  Shashikant Bhoite
+                  Shashikant Patil
                 </h3>
                 <p className="text-lg text-gray-600">Founder &amp; CEO</p>
                 <p className="mt-4 text-gray-700">
-                  Introducing Shashikant Bhoite, the visionary entrepreneur
+                  Introducing Shashikant Patil, the visionary entrepreneur
                   behind our Mumbai-based business. With 12 years of industry
                   expertise, he leads our team with passion, excellence, and a
                   commitment to providing exceptional moving and packing

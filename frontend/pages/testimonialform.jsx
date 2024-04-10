@@ -6,42 +6,40 @@ import { useState } from "react";
 import axios from "axios";
 
 const EnquiryForm = () => {
-//   const [formData, setFormData] = useState({
-//     fullName: "",
-//     email: "",
-//     items: "",
-//   });
+  //   const [formData, setFormData] = useState({
+  //     fullName: "",
+  //     location: "",
+  //     items: "",
+  //   });
 
-//   const handleChange = (e) => {
-//     setFormData((prevFormData) => {
-//       return {
-//         ...prevFormData,
-//         [e.target.name]: e.target.value,
-//       };
-//     });
-//   };
+  //   const handleChange = (e) => {
+  //     setFormData((prevFormData) => {
+  //       return {
+  //         ...prevFormData,
+  //         [e.target.name]: e.target.value,
+  //       };
+  //     });
+  //   };
 
-const [fullName, setFullName] = useState("");
-const [email, setEmail] = useState("");
-const [testimonial, setTestimonial] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [location, setLocation] = useState("");
+  const [testimonial, setTestimonial] = useState("");
 
   const handleSubmit = () => {
     // e.preventDefault();
     // setShowModal(true);
     const testimonialObj = {
-          fullName: fullName,
-          email: email,
-          testimonial: testimonial
-}
-    console.log(testimonialObj)
-    axios.post('api/newTestimonial', testimonialObj)
-    .then(() => {
-        alert('Testimonial added')
-    })
-
+      fullName: fullName,
+      location: location,
+      testimonial: testimonial,
+    };
+    console.log(testimonialObj);
+    axios.post("api/newTestimonial", testimonialObj).then(() => {
+      alert("Testimonial added");
+    });
   };
 
-//   const [showModal, setShowModal] = useState(false);
+  //   const [showModal, setShowModal] = useState(false);
 
   return (
     <div>
@@ -60,26 +58,26 @@ const [testimonial, setTestimonial] = useState("");
         </label>
         <input
           id="fullName"
-        //   value={formData.fullName}
+          //   value={formData.fullName}
           onChange={(event) => setFullName(event.target.value)}
           type="text"
-        //   name="fullName"
+          //   name="fullName"
           class="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-black-500 font-normal text-black"
           required
         />
 
         <label
-          for="email"
+          for="location"
           class="text-gray-500 font-semibold mt-4 dark:text-black py-2"
         >
           Location<span class="text-red-500">*</span>
         </label>
         <input
-          id="email"
-        //   value={formData.email}
-          onChange={(event) => setEmail(event.target.value)}
-          type="email"
-        //   name="email"
+          id="location"
+          //   value={formData.location}
+          onChange={(event) => setLocation(event.target.value)}
+          type="text"
+          //   name="location"
           class="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1font-normal ring-black-500 font-normal text-black"
           required
         />
@@ -92,9 +90,9 @@ const [testimonial, setTestimonial] = useState("");
         </label>
         <textarea
           id="testimonial"
-        //   value={formData.items}
+          //   value={formData.items}
           onChange={(event) => setTestimonial(event.target.value)}
-        //   name="items"
+          //   name="items"
           required
           class="bg-blue-100 border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-black-500 font-normal text-black"
         ></textarea>
@@ -140,7 +138,7 @@ const [testimonial, setTestimonial] = useState("");
                     <span className="text-black ">{formData.fullName}</span>
                   </p>
                   <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                    Email: <span className="text-black ">{formData.email}</span>
+                    locationion: <span className="text-black ">{formData.location}</span>
                   </p>
                   <p className="my-4 text-slate-500 text-lg leading-relaxed">
                     Testimonial: <span className="text-black ">{formData.items}</span>

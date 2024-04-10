@@ -5,7 +5,7 @@ const formResponseSchema = new Schema({
   fullName: {
     type: String,
   },
-  email: {
+  location: {
     type: String,
   },
   contactno: {

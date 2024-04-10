@@ -66,10 +66,10 @@ const Service = () => {
                 <div className="bg-white lg:h-full p-6 -mt-6 md:mt-0 relative mb-4 md:mb-0 flex flex-wrap md:flex-wrap items-center">
                   <div className="w-full lg:w-1/5 lg:border-right lg:border-solid text-center md:text-left">
                     <h3 className="font-bold text-xl">House Relocation</h3>
-                    <p className="mb-0 mt-3 text-grey-dark text-sm italic">
-                      {/* Moscow - Russia */}
+                    {/* <p className="mb-0 mt-3 text-grey-dark text-sm italic">
+                    
                       XYZ
-                    </p>
+                    </p> */}
                     <hr className="w-1/4 md:ml-0 mt-4  border lg:hidden" />
                   </div>
                   <div className="w-full lg:w-3/5 lg:px-3">
@@ -121,9 +121,9 @@ const Service = () => {
                 <div className="bg-white lg:h-full p-6 -mt-6 md:mt-0 relative mb-4 md:mb-0 flex flex-wrap md:flex-wrap items-center">
                   <div className="w-full lg:w-1/5 lg:border-right lg:border-solid text-center md:text-left">
                     <h3 className="font-bold text-xl">Office Relocation</h3>
-                    <p className="mb-0 mt-3 text-grey-dark text-sm italic">
+                    {/* <p className="mb-0 mt-3 text-grey-dark text-sm italic">
                       abcdef
-                    </p>
+                    </p> */}
                     <hr className="w-1/4 md:ml-0 mt-4  border lg:hidden" />
                   </div>
                   <div className="w-full lg:w-3/5 lg:px-3">
@@ -177,9 +177,9 @@ const Service = () => {
                 <div className="bg-white lg:h-full p-6 -mt-6 md:mt-0 relative mb-4 md:mb-0 flex flex-wrap md:flex-wrap items-center">
                   <div className="w-full lg:w-1/5 lg:border-right lg:border-solid text-center md:text-left">
                     <h3 className="font-bold text-xl">Packing Unpacking</h3>
-                    <p className="mb-0 mt-3 text-grey-dark text-sm italic">
+                    {/* <p className="mb-0 mt-3 text-grey-dark text-sm italic">
                       lmnopq
-                    </p>
+                    </p> */}
                     <hr className="w-1/4 md:ml-0 mt-4  border lg:hidden" />
                   </div>
                   <div className="w-full lg:w-3/5 lg:px-3">
@@ -190,13 +190,13 @@ const Service = () => {
                       is trained in efficient packing techniques, ensuring the
                       utmost protection for your belongings during transit. We
                       carefully handle and label each item, making unpacking a
-                      breeze at your new location. Whether it&apos;s fragile items,
-                      bulky furniture, or delicate electronics, we prioritize
-                      their safety and ensure they reach their destination
-                      intact. Trust First Packers and Movers to handle the
-                      meticulous packing and unpacking of your goods, providing
-                      you with a stress-free moving experience from start to
-                      finish.
+                      breeze at your new location. Whether it&apos;s fragile
+                      items, bulky furniture, or delicate electronics, we
+                      prioritize their safety and ensure they reach their
+                      destination intact. Trust First Packers and Movers to
+                      handle the meticulous packing and unpacking of your goods,
+                      providing you with a stress-free moving experience from
+                      start to finish.
                     </p>
                   </div>
                   <div className="w-full lg:w-1/5 mt-6 lg:mt-0 lg:px-4 text-center md:text-left">
@@ -232,10 +232,10 @@ const Service = () => {
                 <div className="bg-white lg:h-full p-6 -mt-6 md:mt-0 relative mb-4 md:mb-0 flex flex-wrap md:flex-wrap items-center">
                   <div className="w-full lg:w-1/5 lg:border-right lg:border-solid text-center md:text-left">
                     <h3 className="font-bold text-xl">Loading Unloading</h3>
-                    <p className="mb-0 mt-3 text-grey-dark text-sm italic">
-                      {/* Moscow - Russia */}
+                    {/* <p className="mb-0 mt-3 text-grey-dark text-sm italic">
+                      
                       XYZ
-                    </p>
+                    </p> */}
                     <hr className="w-1/4 md:ml-0 mt-4  border lg:hidden" />
                   </div>
                   <div className="w-full lg:w-3/5 lg:px-3">

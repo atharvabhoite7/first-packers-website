@@ -8,7 +8,7 @@ import axios from "axios";
 const EnquiryForm = () => {
   const [formData, setFormData] = useState({
     fullName: "",
-    email: "",
+    location: "",
     contactno: "",
     budget: "",
     items: "",
@@ -79,17 +79,17 @@ const EnquiryForm = () => {
         />
 
         <label
-          for="email"
+          for="location"
           class="text-gray-500 font-semibold mt-4 dark:text-black py-2"
         >
-          E-mail<span class="text-red-500">*</span>
+          Location<span class="text-red-500">*</span>
         </label>
         <input
-          id="email"
-          value={formData.email}
+          id="location"
+          value={formData.location}
           onChange={handleChange}
-          type="email"
-          name="email"
+          type="text"
+          name="location"
           class="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1font-normal ring-black-500 font-normal text-black"
           required
         />
@@ -191,7 +191,7 @@ const EnquiryForm = () => {
                     <span className="text-black ">{formData.fullName}</span>
                   </p>
                   <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                    Email: <span className="text-black ">{formData.email}</span>
+                    Location: <span className="text-black ">{formData.location}</span>
                   </p>
                   <p className="my-4 text-slate-500 text-lg leading-relaxed">
                     Contact:{" "}

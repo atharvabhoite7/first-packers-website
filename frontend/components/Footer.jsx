@@ -3,7 +3,6 @@ import { FaInstagram, FaWhatsapp, FaWhatsappSquare } from "react-icons/fa";
 
 import { CiMail } from "react-icons/ci";
 
-
 function Footer() {
   return (
     <>
@@ -19,9 +18,9 @@ function Footer() {
               </a>
 
               <a href="mailto:firstpackers1@gmail.com">
-              <CiMail className="text-2xl cursor-pointer hover:text-red-700" />
+                <CiMail className="text-2xl cursor-pointer hover:text-red-700" />
               </a>
-              
+
               {/* <FaLinkedin className="text-2xl cursor-pointer hover:text-blue-600" /> */}
               <FaWhatsapp className="text-2xl cursor-pointer hover:text-green-600" />
               {/* <FaYoutube className="text-2xl cursor-pointer hover:text-red-600" /> */}
@@ -86,10 +85,10 @@ function Footer() {
           </ul>
         </div>
       </div>
-      
+
       <div className="flex flex-col justify-center items-center text-center bg-black">
         <h1 className=" text-stone-300 font-semibold">
-          © 2022 First Packers & Movers | All Rights Reserved
+          © 2024 First Packers & Movers | All Rights Reserved
         </h1>
       </div>
     </>

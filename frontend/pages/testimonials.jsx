@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import axios from "axios";
 
-export default function Testimonials ({ testimonials }) {
+export default function Testimonials({ testimonials }) {
   return (
     <div>
       <section className="text-gray-600 body-font">
@@ -35,10 +35,10 @@ export default function Testimonials ({ testimonials }) {
                       />
                       <span className="flex-grow flex flex-col pl-4">
                         <span className="title-font font-medium text-gray-900">
-                        {testimonials.fullName}
+                          {testimonials.fullName}
                         </span>
                         <span className="text-gray-500 text-sm">
-                        {testimonials.email}
+                          {testimonials.email}
                         </span>
                       </span>
                     </a>
@@ -77,7 +77,7 @@ export default function Testimonials ({ testimonials }) {
                     <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">
                       {testimonials.fullName}
                     </h2>
-                    <p class="text-gray-500">{testimonials.email}</p>
+                    <p class="text-gray-500">{testimonials.location}</p>
                   </div>
                 );
               })}
@@ -92,8 +92,7 @@ export default function Testimonials ({ testimonials }) {
       </section> */}
     </div>
   );
-};
-
+}
 
 export async function getStaticProps() {
   const mongoose = require("mongoose");

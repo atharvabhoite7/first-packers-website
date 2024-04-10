@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import Image from "next/image";
 import MainLogo from "../public/logo_firstpackers&movers.png";
 import Link from "next/link";
@@ -6,7 +6,7 @@ import Link from "next/link";
 const ForgotPassword = () => {
   return (
     <div>
-         <section className="bg-[#F4F7FF] py-10 lg:py-[120px]">
+      <section className="bg-[#F4F7FF] py-10 lg:py-[120px]">
         <div className="container mx-auto">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
@@ -16,21 +16,18 @@ const ForgotPassword = () => {
                     href="javascript:void(0)"
                     className="mx-auto inline-block max-w-[160px]"
                   >
-                    <Image
-                      src={MainLogo}
-                      alt="logo"
-                    />
+                    <Image src={MainLogo} alt="logo" />
                   </a>
                 </div>
                 <form action="#" method="POST">
                   <div className="mb-6">
                     <input
                       type="text"
-                      placeholder="Email"
+                      placeholder="location"
                       className="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
                     />
                   </div>
-                
+
                   <div className="mb-10">
                     <input
                       type="submit"
@@ -39,8 +36,7 @@ const ForgotPassword = () => {
                     />
                   </div>
                 </form>
-                
-                
+
                 <div>
                   <span className="absolute top-1 right-1">
                     <svg
@@ -265,7 +261,7 @@ const ForgotPassword = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default ForgotPassword
+export default ForgotPassword;

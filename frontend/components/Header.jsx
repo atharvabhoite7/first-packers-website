@@ -9,9 +9,7 @@ function Header() {
     <div>
       <Head>
         <title>First Packers & Movers</title>
-        <meta
-          name="First Packers & Movers"
-        />
+        <meta name="First Packers & Movers" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <nav className="w-full bg-blue-200 shadow">
@@ -79,7 +77,7 @@ function Header() {
             >
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 font-semibold">
                 <li className="text-black ">
-                  <Link href="/home">Home</Link>
+                  <Link href="/">Home</Link>
                 </li>
                 <li className="text-black">
                   <Link href="/services">Services</Link>
@@ -90,9 +88,9 @@ function Header() {
                 <li className="text-black ">
                   <Link href="/enquiry">Enquiry</Link>
                 </li>
-                <li className="text-black ">
+                {/* <li className="text-black ">
                   <Link href="/chat">ChatBot</Link>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
